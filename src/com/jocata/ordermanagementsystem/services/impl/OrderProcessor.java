@@ -7,7 +7,8 @@ import com.jocata.ordermanagementsystem.util.OrderStatus;
 
 import java.util.logging.Logger;
 
-public class OrderProcessor extends Thread{
+public class
+OrderProcessor extends Thread{
 
     private static final Logger logger=Logger.getLogger(OrderProcessor.class.getName());
 

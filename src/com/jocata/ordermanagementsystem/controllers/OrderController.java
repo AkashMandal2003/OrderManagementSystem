@@ -10,18 +10,23 @@ public class OrderController {
 
      OrderService orderService=new OrderServiceImpl();
 
-    public void createOrder(OrderForm orderForm) {
+    public OrderForm createOrder(OrderForm orderForm) {
         if(orderForm!=null) {
-            orderService.createOrder(orderForm.getCustomer(), orderForm.getProducts());
-            return;
+            return orderService.createOrder(orderForm.getCustomer(), orderForm.getProducts());
         }
         throw new IllegalArgumentException("Details are missing..");
     }
 
-    public void updateOrder(Integer orderId,OrderForm orderForm){
-        if(orderId!=null && orderForm!=null){
-            orderService.updateOrder(orderId,orderForm);
-            return;
+    public OrderForm updateOrder(OrderForm orderForm){
+        if(orderForm!=null){
+            return orderService.updateOrder(orderForm);
+        }
+        throw new IllegalArgumentException("Details are missing..");
+    }
+
+    public OrderForm getOrderById(Integer orderId){
+        if(orderId!=null){
+            return orderService.getOrder(orderId);
         }
         throw new IllegalArgumentException("Details are missing..");
     }

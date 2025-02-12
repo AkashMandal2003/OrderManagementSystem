@@ -9,15 +9,15 @@ public class CustomerMain {
 
         CustomerController customerController=new CustomerController();
 
-//        CustomerForm customer1=new CustomerForm();
-//        customer1.setCustomerName("Abc");
-//        customer1.setEmail("abc@email.com");
-//        customer1.setPassword("abc");
-//        customer1.setAddress("Banjara hills");
+        CustomerForm customer1=new CustomerForm();
+        customer1.setCustomerName("Abc");
+        customer1.setEmail("abc@email.com");
+        customer1.setPassword("abc");
+        customer1.setAddress("Banjara hills");
 
-//        CustomerForm customerForm = customerController.saveCustomer(customer1);
+        CustomerForm customerForm = customerController.saveCustomer(customer1);
 
-        CustomerForm customerForm = customerController.getCustomer(481063);
+//        CustomerForm customerForm = customerController.getCustomer(481063);
 
 //        CustomerForm customer1=new CustomerForm();
 //        customer1.setCustomerId("481063");

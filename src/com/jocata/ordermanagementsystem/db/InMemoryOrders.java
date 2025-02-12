@@ -18,7 +18,6 @@ public class InMemoryOrders {
     private static final String DELIMITER = ",";
 
     private static final Map<Integer, OrderDetails> orderMap = new ConcurrentHashMap<>();
-    private static int orderCounter = 1;
 
     static {
         loadDataFromFile();
@@ -61,7 +60,6 @@ public class InMemoryOrders {
                     order.setStatus(OrderStatus.valueOf(parts[6]));
 
                     orderMap.put(order.getOrderId(), order);
-                    orderCounter = Math.max(orderCounter, order.getOrderId() + 1);
                 }
             }
         } catch (IOException | NumberFormatException e) {
@@ -93,9 +91,6 @@ public class InMemoryOrders {
     }
 
     public static void persist(OrderDetails order) {
-        if (order.getOrderId() == 0) {
-            order.setOrderId(orderCounter++);
-        }
         orderMap.put(order.getOrderId(), order);
         saveDataToFile();
     }

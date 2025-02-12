@@ -5,17 +5,11 @@ import com.jocata.ordermanagementsystem.util.OrderStatus;
 import java.util.List;
 
 public class OrderDetails {
-    private static int orderCounter = 1;
     private Integer orderId;
     private CustomerDetails customer;
     private List<ProductDetails> products;
     private double totalAmount;
     private OrderStatus status;
-
-    public OrderDetails() {
-        this.orderId = orderCounter++;
-        this.status = OrderStatus.PENDING;
-    }
 
     private double calculateTotal() {
         double total = 0.0;

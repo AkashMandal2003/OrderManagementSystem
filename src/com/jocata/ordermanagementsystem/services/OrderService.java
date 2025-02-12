@@ -7,11 +7,13 @@ import com.jocata.ordermanagementsystem.forms.ProductForm;
 import java.util.List;
 
 public interface OrderService {
-    void createOrder(CustomerForm customer, List<ProductForm> products);
+    OrderForm createOrder(CustomerForm customer, List<ProductForm> products);
+
+    OrderForm getOrder(Integer orderId);
 
     List<OrderForm> getCustomerAllOrders(Integer customerId);
 
-    void updateOrder(int orderId, OrderForm updatedOrderForm);
+    OrderForm updateOrder(OrderForm updatedOrderForm);
 
-    void cancelOrder(int orderId);
+    void cancelOrder(Integer orderId);
 }

@@ -18,34 +18,34 @@ public class OrderMain {
     public static void main(String[] args) {
 
         OrderController orderController = new OrderController();
-        //CustomerController customerController=new CustomerController();
-//        ProductController productController=new ProductController();
+        CustomerController customerController=new CustomerController();
+        ProductController productController=new ProductController();
 //
-        //CustomerForm customer = customerController.getCustomer(481063);
-//        if (customer == null) {
-//            logger.info("Customer not found!");
-//            return;
-//        }
-//
-//        ProductForm product1 = productController.getProduct(454789);
-//        ProductForm product2 = productController.getProduct(713756);
-//        if (product1 == null || product2 == null) {
-//            logger.info("One or more products not found!");
-//            return;
-//        }
-//
-//        List<ProductForm> products=new ArrayList<>();
-//        products.add(product1);
-//        products.add(product2);
-//
-//        for (int i = 0; i < 5; i++) {
-//            OrderForm orderForm = new OrderForm();
-//            orderForm.setCustomer(customer);
-//            orderForm.setProducts(products);
-//            orderController.createOrder(orderForm);
-//
-//            logger.info("Order " + (i + 1) + " created successfully!");
-//        }
+        CustomerForm customer = customerController.getCustomer(447244);
+        if (customer == null) {
+            logger.info("Customer not found!");
+            return;
+        }
+
+        ProductForm product1 = productController.getProduct(535320);
+        ProductForm product2 = productController.getProduct(454789);
+        if (product1 == null || product2 == null) {
+            logger.info("One or more products not found!");
+            return;
+        }
+
+        List<ProductForm> products=new ArrayList<>();
+        products.add(product1);
+        products.add(product2);
+
+        for (int i = 0; i < 5; i++) {
+            OrderForm orderForm = new OrderForm();
+            orderForm.setCustomer(customer);
+            orderForm.setProducts(products);
+            orderController.createOrder(orderForm);
+
+            logger.info("Order " + (i + 1) + " created successfully!");
+        }
 
 //        OrderForm orderForm=new OrderForm();
 //        orderForm.setCustomer(customer);
@@ -55,7 +55,21 @@ public class OrderMain {
 //            System.out.println(order.getCustomer().getCustomerName());
 //        }
 
-        orderController.cancelOrder(5);
+//        orderController.cancelOrder(5);
 
+//        OrderForm existingOrder = orderController.getOrderById(908941);
+//
+//        if (existingOrder != null) {
+//            logger.info("Updating order with ID: " + existingOrder.getOrderId());
+//            ProductForm newProduct = productController.getProduct(535320);
+//            if (newProduct != null) {
+//                existingOrder.getProducts().add(newProduct);
+//            }
+//
+//            orderController.updateOrder(existingOrder);
+//            logger.info("Order updated successfully!");
+//        } else {
+//            logger.info("Order not found for update!");
+//        }
     }
 }
